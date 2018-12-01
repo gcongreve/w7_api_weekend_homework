@@ -6,7 +6,6 @@ const SelectView = function (dropDown) {
 
 
 SelectView.prototype.bindEvents = function () {
-  console.log("happening")
   PubSub.subscribe("Beer:data-ready", (event) => {
     const beers = event.detail;
     this.makeDropDownList(beers)
