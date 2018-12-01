@@ -15,7 +15,7 @@ SelectAll.prototype.bindEvents = function () {
 };
 
 SelectAll.prototype.showEverything = function () {
-  const displayBeers = new DisplayBeers(document.querySelector('#abv-beer-display'));
+  const displayBeers = new DisplayBeers(document.querySelector('#beer-display'));
   displayBeers.displayBeers(this.beers);
 };
 

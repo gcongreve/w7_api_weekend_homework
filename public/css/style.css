@@ -6,7 +6,7 @@
 
 };
 
-#abv-beer-display img{
+# img{
   height: 200px;
  }
 
@@ -16,8 +16,12 @@
 }
 
 
-#abv-beer-display {
+#beer-display {
   display: flex;
+  align-content: stretch;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .beer {

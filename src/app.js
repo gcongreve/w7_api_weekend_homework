@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const abvSelectView = new AbvSelectView(document.querySelector('#abv-beer-list'));
   abvSelectView.bindEvents();
 
-  const displayView = new DisplayView(document.querySelector('#abv-beer-display'));
+  const displayView = new DisplayView(document.querySelector('#beer-display'));
   displayView.bindEvents();
 
-  const abvDisplayView = new AbvDisplayView(document.querySelector('#abv-beer-display'));
+  const abvDisplayView = new AbvDisplayView(document.querySelector('#beer-display'));
   abvDisplayView.bindEvents();
 
 
