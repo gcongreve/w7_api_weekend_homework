@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px dotted black;
+
+};
+
+#abv-beer-display img{
+  height: 200px;
+ }
+
+.beer img {
+    height: 200px;
+}

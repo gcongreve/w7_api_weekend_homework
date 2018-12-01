@@ -6,20 +6,10 @@ const DisplayView = function (displayArea) {
 };
 
 
-// DisplayView.prototype.displayAll = function () {
-//   PubSub.subscribe("Beer:data-ready", (event) => {
-//     const allBeers = event.detail;
-//     console.log("allBeers", allBeers);
-//     for (beer of allBeers){
-//       this.render(beer)
-//     }
-//   })
-// };
 
 DisplayView.prototype.bindEvents = function () {
   PubSub.subscribe('Beer:selected-beer', (event) => {
     const selectedBeer = event.detail;
-    this.clearList;
     this.render(selectedBeer);
   })
 };
@@ -29,6 +19,7 @@ DisplayView.prototype.clearList = function () {
 };
 
 DisplayView.prototype.render = function (beer) {
+  this.clearList()
   toDisplay = this.customCreateElement('h2', "textContent", beer.name)
   this.displayArea.appendChild(toDisplay)
 };
