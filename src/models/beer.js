@@ -3,6 +3,7 @@ const PubSub = require('../helpers/pub_sub.js')
 
 const Beer = function () {
   this.beerData = null;
+  this.beersByAbv = null;
 };
 
 Beer.prototype.getBeerData = function () {
@@ -21,12 +22,23 @@ Beer.prototype.bindEvents = function () {
     const beer = this.getBeerByIndex(selectedIndex);
     PubSub.publish('Beer:selected-beer', beer);
   })
+  PubSub.subscribe('AbvSelectView:selected-abv', (event) => {
+    const selectedAbv = event.detail;
+    console.log("selected abv = ", selectedAbv);
+    this.getBeersByAbv(selectedAbv);
+    console.log("abv beers", this.beersByAbv);
+    PubSub.publish('Beer:selected-beer-abv', this.beersByAbv);
+  })
 };
 
 
 Beer.prototype.getAbvs = function () {
   const abvs = this.beerData.map(beer => beer.abv).filter((abv, index, abvs) => abvs.indexOf(abv) === index);
   return abvs;
+};
+
+Beer.prototype.getBeersByAbv = function (abv) {
+  this.beersByAbv = this.beerData.filter(beer => beer.abv === Number(abv));
 };
 
 Beer.prototype.getBeerByIndex = function (index) {
