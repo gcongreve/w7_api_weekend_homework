@@ -9,9 +9,13 @@ const AbvDisplayView = function (displayArea) {
 AbvDisplayView.prototype.bindEvents = function () {
   PubSub.subscribe('Beer:selected-beer-abv', (event) => {
     const selectedBeers = event.detail;
-    this.clearList()
-    this.loopThroughBeers(selectedBeers)
+    this.displayBeers(selectedBeers)
   })
+};
+
+AbvDisplayView.prototype.displayBeers = function (beers) {
+  this.clearList()
+  this.loopThroughBeers(beers)
 };
 
 AbvDisplayView.prototype.loopThroughBeers = function (beers) {
@@ -51,8 +55,6 @@ AbvDisplayView.prototype.getMaltList = function (malts) {
   })
   return maltList;
 };
-
-
 
 
 AbvDisplayView.prototype.customCreateElement = function (type, value, content) {

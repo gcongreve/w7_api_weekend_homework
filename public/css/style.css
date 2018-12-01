@@ -29,6 +29,11 @@
   color: red;
 }
 
+.beer ul {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .beer li, h2, h6{
   text-align: center;
 }
