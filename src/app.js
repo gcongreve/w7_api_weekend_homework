@@ -9,13 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectView = new SelectView(document.querySelector('#beer-list'));
   selectView.bindEvents();
 
+  const displayView = new DisplayView(document.querySelector('#beer-display'));
+  displayView.bindEvents();
+
   const beer = new Beer();
+  beer.getBeerData();
   beer.bindEvents();
 
 
 
-  // const displayView = new DisplayView(document.querySelector('#beer-display'));
-  // displayView.bindEvents();
+
 
 
 })

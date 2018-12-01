@@ -19,10 +19,10 @@ SelectView.prototype.bindEvents = function () {
     });
   });
 
-  // this.dropDown.addEventListener('change', (event) => {
-  //   const selectedIndex = event.target.value;
-  //   PubSub.publish('SelectView:selectedIndex', selectedIndex);
-  // })
+  this.dropDown.addEventListener('change', (event) => {
+    const selectedIndex = event.target.value;
+    PubSub.publish('SelectView:selectedBeerIndex', selectedIndex);
+  })
 
 };
 
