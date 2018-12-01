@@ -12,4 +12,23 @@
 
 .beer img {
     height: 200px;
+    float: right;
+}
+
+
+#abv-beer-display {
+  display: flex;
+}
+
+.beer {
+  width: 30%;
+  /* text-align: center; */
+}
+
+.beer ul, li {
+  color: red;
+}
+
+.beer li, h2, h6{
+  text-align: center;
 }
