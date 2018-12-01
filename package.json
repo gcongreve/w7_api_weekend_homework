@@ -4,7 +4,7 @@
   "description": "y",
   "main": "y",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -w",
     "test": "y"
   },
   "repository": {
