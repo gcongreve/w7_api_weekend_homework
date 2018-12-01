@@ -9,14 +9,7 @@ SelectView.prototype.bindEvents = function () {
   console.log("happening")
   PubSub.subscribe("Beer:data-ready", (event) => {
     const beers = event.detail;
-    console.log("Beers:", beers);
-    beers.forEach((beer, index) => {
-      const beerName = beer.name;
-      const option = document.createElement('option');
-      option.textContent = beerName;
-      option.value = index;
-      this.dropDown.appendChild(option);
-    });
+    this.makeDropDownList(beers)
   });
 
   this.dropDown.addEventListener('change', (event) => {
@@ -25,5 +18,21 @@ SelectView.prototype.bindEvents = function () {
   })
 
 };
+
+
+
+SelectView.prototype.makeDropDownList = function (beers) {
+  beers.forEach((beer, index) => {
+    const beerName = beer.name;
+    const option = document.createElement('option');
+    option.textContent = beerName;
+    option.value = index;
+    this.dropDown.appendChild(option);
+  });
+};
+
+
+
+
 
 module.exports = SelectView;

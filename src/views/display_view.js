@@ -1,10 +1,10 @@
 const PubSub = require("../helpers/pub_sub.js");
+const DisplayBeers = require("./display_beers.js")
+
 
 const DisplayView = function (displayArea) {
  this.displayArea = displayArea;
- this.beers = null;
 };
-
 
 
 DisplayView.prototype.bindEvents = function () {
@@ -14,23 +14,17 @@ DisplayView.prototype.bindEvents = function () {
   })
 };
 
+
+DisplayView.prototype.render = function (beer) {
+  displayer = new DisplayBeers(this.displayArea);
+    this.clearList()
+    displayer.displayBeer(beer)
+};
+
+
 DisplayView.prototype.clearList = function () {
   this.displayArea.innerHTML = '';
 };
-
-DisplayView.prototype.render = function (beer) {
-  this.clearList()
-  toDisplay = this.customCreateElement('h2', "textContent", beer.name)
-  this.displayArea.appendChild(toDisplay)
-};
-
-
-DisplayView.prototype.customCreateElement = function (type, value, content) {
-  const element = document.createElement(type)
-  element[value] = content;
-  return element;
-};
-
 
 
 

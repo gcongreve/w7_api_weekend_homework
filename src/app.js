@@ -3,7 +3,6 @@ const DisplayView = require("./views/Display_view.js")
 const SelectView = require("./views/select_view.js")
 const AbvSelectView = require("./views/abv_select_view.js")
 const AbvDisplayView = require("./views/abv_display_view.js")
-const DisplayBeer = require("./views/display_beer.js")
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('javascript has loaded');
