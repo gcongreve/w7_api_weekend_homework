@@ -10,7 +10,7 @@ SelectAll.prototype.bindEvents = function () {
     this.beers = event.detail;
   });
    this.location.addEventListener('click', (event) => {
-     this.showEverything();
+     this.showAll();
    });
   const deleteAll = document.querySelector('#delete-all');
   deleteAll.addEventListener('click', (event) => {
@@ -18,7 +18,7 @@ SelectAll.prototype.bindEvents = function () {
   })
 };
 
-SelectAll.prototype.showEverything = function () {
+SelectAll.prototype.showAll = function () {
   const displayBeers = new DisplayBeers(document.querySelector('#beer-display'));
   displayBeers.displayBeers(this.beers);
 };

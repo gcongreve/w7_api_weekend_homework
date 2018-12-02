@@ -7,7 +7,7 @@ const Beer = function () {
 };
 
 Beer.prototype.getBeerData = function () {
-  const requestHelper = new RequestHelper("https://api.punkapi.com/v2/beers");
+  const requestHelper = new RequestHelper("https://api.punkapi.com/v2/beers?page=1&per_page=80");
   requestHelper.get().then((data) => {
     this.beerData = data;
     PubSub.publish("Beer:data-ready", data);

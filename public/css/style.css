@@ -10,9 +10,18 @@
   height: 200px;
  }
 
+ header {
+   text-align: center;
+ }
+
 .beer img {
     height: 200px;
     float: right;
+}
+
+#individual-beer-list, #abv-beer-list, #select-all {
+  width: 31%;
+  font-size: 20px;
 }
 
 
@@ -24,21 +33,34 @@
   flex-wrap: wrap;
 }
 
+#background {
+  background-image: url("https://cdn.londonandpartners.com/asset/432f2d53454cb213701132d9b5a62898.gif");
+  height: 9000px;
+}
+
+
+
 .beer {
   width: 30%;
+  background-color: white;
+  opacity: 0.8;
+  margin: 8px;
   /* text-align: center; */
 }
 
 .beer ul, li {
   color: red;
+  font-size: 12px;
 }
 
 .beer ul {
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: 14px;
+  list-style-type: none;
 }
 
-.beer li, h2, h6{
+.beer li, h2, h6, p{
   text-align: center;
 }
 

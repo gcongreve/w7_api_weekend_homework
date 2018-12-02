@@ -31,7 +31,7 @@ DisplayBeers.prototype.displayBeer = function (beer) {
   div.appendChild(abv);
   const maltList = this.getMaltList(beer.ingredients.malt);
   div.appendChild(maltList);
-  const twist = this.customCreateElement('p', "textContent", `Twist: ${beer.method.twist}`);
+  const twist = this.customCreateElement('p', "textContent", `Tips: ${beer.brewers_tips}`);
   div.appendChild(twist);
 
   this.displayArea.appendChild(div)
@@ -52,6 +52,7 @@ DisplayBeers.prototype.customCreateElement = function (type, value, content) {
   element[value] = content;
   return element;
 };
+
 
 
 module.exports = DisplayBeers;
