@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px dotted black;
+  /* border: 1px dotted black; */
 
 };
 
@@ -52,6 +52,7 @@
   background-color: white;
   opacity: 0.8;
   margin: 8px;
+  border: 1px dotted antiquewhite;
   /* text-align: center; */
 }
 
