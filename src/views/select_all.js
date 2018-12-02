@@ -12,11 +12,21 @@ SelectAll.prototype.bindEvents = function () {
    this.location.addEventListener('click', (event) => {
      this.showEverything();
    });
+  const deleteAll = document.querySelector('#delete-all');
+  deleteAll.addEventListener('click', (event) => {
+    this.deleteAll();
+  })
 };
 
 SelectAll.prototype.showEverything = function () {
   const displayBeers = new DisplayBeers(document.querySelector('#beer-display'));
   displayBeers.displayBeers(this.beers);
+};
+
+
+SelectAll.prototype.deleteAll = function () {
+  area = document.querySelector('#beer-display');
+  area.innerHTML = " "
 };
 
 module.exports = SelectAll;
